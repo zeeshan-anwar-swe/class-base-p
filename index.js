@@ -4,7 +4,8 @@ import { vehicleData } from "./services/vehicle-data.js";
 import { VehicleDataServices } from "./services/vehicle-data-servcies.js";
 
 const dataServices = new VehicleDataServices();
-dataServices.loadData(vehicleData)
+dataServices.loadData(vehicleData);
 
-console.log("Drone:",dataServices.drone);
-console.log("Car:",dataServices.car);
+console.log("Car:", dataServices.car);
+console.log("Drone:", dataServices.drone);
+console.log("Error:", dataServices.error);
