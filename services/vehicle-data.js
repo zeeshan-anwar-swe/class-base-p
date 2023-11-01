@@ -1,0 +1,58 @@
+export const vehicleData = [
+    {
+        license: 1144,
+        type: "car",
+        body:"Suv",
+        miles:4000,
+        model: "Mazda",
+    },
+    {
+        license: 1124,
+        type: "car",
+        body:"Sedan",
+        miles:4500,
+        model: "Honda",
+    },
+    {
+        license: 1244,
+        type: "car",
+        body:"Mini Car",
+        miles:6500,
+        model: "Suzuki",
+    },
+    {
+        license: 1132,
+        type: "car",
+        model: "Hundai",
+        body:"Suv",
+        miles:3500,
+    },
+    {
+        license: 3321,
+        type: "drone",
+        model: "Hino",
+        airTimeHours: 500,
+        base: "CN",
+    },
+    {
+        license: 5431,
+        type: "drone",
+        model: "Mercedes",
+        airTimeHours: 6000,
+        base: "USA",
+    },
+    {
+        license: 7352,
+        type: "drone",
+        model: "Zahang Tong",
+        airTimeHours: 6200,
+        base: "CN",
+    },
+    {
+        license: 1523,
+        type: "drone",
+        model: "BMW",
+        airTimeHours: 200,
+        base: "USA",
+    },
+];
