@@ -1,12 +1,39 @@
 import { Drone } from "../classes/drone.js";
 import { Car } from "../classes/car.js";
 import { VehicleDataError } from "./vehicle-data-error.js";
-
 export class VehicleDataServices {
     constructor() {
         this.car = [];
         this.drone = [];
         this.error = [];
+    }
+
+    validateCarData(car) {
+        const requireProps = "licence model body miles".split(" ");
+        let hasError = false;
+        for (let field of requireProps) {
+            if (!car[field]) {
+                this.error.push(
+                    new VehicleDataError(`Invalid field: ${field}`, car)
+                );
+                hasError = true;
+            }
+        }
+        return !hasError;
+    }
+
+    validateDroneData(drone) {
+        const requireProps = "licence model airTimeHours base".split(" ");
+        let hasError = false;
+        for (let field of requireProps) {
+            if (!drone[field]) {
+                this.error.push(
+                    new VehicleDataError(`Invalid field: ${field}`, drone)
+                );
+                hasError = true;
+            }
+        }
+        return !hasError;
     }
 
     loadCar(car) {
@@ -40,13 +67,29 @@ export class VehicleDataServices {
         for (let vData of vehicleData) {
             switch (vData.type) {
                 case "car":
-                    const car = this.loadCar(vData);
-                    this.car.push(vData);
+                    if (this.validateCarData) {
+                        const car = this.loadCar(vData);
+                        car && this.car.push(vData);
+                    } else {
+                        const e = new VehicleDataError(
+                            "Invalid car data",
+                            vData
+                        );
+                        this.error.push(e);
+                    }
                     break;
 
                 case "drone":
-                    const drone = this.loadDrone(vData);
-                    this.drone.push(vData);
+                    if (this.validateDroneData) {
+                        const drone = this.loadDrone(vData);
+                        drone && this.drone.push(vData);
+                    } else {
+                        const e = new VehicleDataError(
+                            "Invalid drone data",
+                            vData
+                        );
+                        this.error.push(e);
+                    }
                     break;
 
                 default:

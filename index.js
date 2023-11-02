@@ -1,11 +1,36 @@
-import { Car } from "./classes/car.js";
-import { Drone } from "./classes/drone.js";
 import { vehicleData } from "./services/vehicle-data.js";
 import { VehicleDataServices } from "./services/vehicle-data-servcies.js";
 
-const dataServices = new VehicleDataServices();
-dataServices.loadData(vehicleData);
+const serviceData = new VehicleDataServices();
+serviceData.loadData(vehicleData);
 
-console.log("Car:", dataServices.car);
-console.log("Drone:", dataServices.drone);
-console.log("Error:", dataServices.error);
+const carTableBody = document.getElementById("car-table-body");
+let carTableBodyContent = "";
+
+const droneTableBody = document.getElementById("drone-table-body");
+let droneTableBodyContent = "";
+
+serviceData.car.map((item, index) => {
+    carTableBodyContent += `
+    <tr>
+        <td class="mdl-data-table__cell--non-numeric">${item.model}</td>
+        <td>${item.miles}</td>
+        <td>${item.license}</td>
+    </tr>
+`;
+    console.log(item);
+});
+
+serviceData.drone.map((item, index) => {
+    droneTableBodyContent += `
+    <tr>
+        <td class="mdl-data-table__cell--non-numeric">${item.model}</td>
+        <td>${item.airTimeHours}</td>
+        <td>${item.base}</td>
+    </tr>
+`;
+    console.log(item);
+});
+
+carTableBody.innerHTML = carTableBodyContent;
+droneTableBody.innerHTML = droneTableBodyContent;

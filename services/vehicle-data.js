@@ -5,6 +5,7 @@ export const vehicleData = [
         body:"Suv",
         miles:4000,
         model: "Mazda",
+        latLong: "40.771956 -73.978531"
     },
     {
         license: 1124,
@@ -12,6 +13,8 @@ export const vehicleData = [
         body:"Sedan",
         miles:4500,
         model: "Honda",
+        latLong: "40.771956 -73.978531"
+
     },
     {
         license: 1244,
@@ -19,6 +22,8 @@ export const vehicleData = [
         body:"Mini Car",
         miles:6500,
         model: "Suzuki",
+        latLong: "40.771956 -73.978531"
+
     },
     {
         license: 1132,
@@ -26,6 +31,8 @@ export const vehicleData = [
         model: "Hundai",
         body:"Suv",
         miles:3500,
+        latLong: "40.771956 -73.978531"
+
     },
     {
         license: 3321,
@@ -33,6 +40,8 @@ export const vehicleData = [
         model: "Hino",
         airTimeHours: 500,
         base: "CN",
+        latLong: "40.771956 -73.978531"
+
     },
     {
         license: 5431,
@@ -40,6 +49,8 @@ export const vehicleData = [
         model: "Mercedes",
         airTimeHours: 6000,
         base: "USA",
+        latLong: "40.771956 -73.978531"
+
     },
     {
         license: 7352,
@@ -47,6 +58,8 @@ export const vehicleData = [
         model: "Zahang Tong",
         airTimeHours: 6200,
         base: "CN",
+        latLong: "40.771956 -73.978531"
+
     },
     {
         license: 1523,
@@ -54,5 +67,7 @@ export const vehicleData = [
         model: "BMW",
         airTimeHours: 200,
         base: "USA",
+        latLong: "40.771956 -73.978531"
+
     },
 ];
